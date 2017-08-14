@@ -1,4 +1,5 @@
-#include <iostream>  
+#include <iostream> 
+#include <vector> 
 using namespace std;
 
 template <class T>
@@ -16,7 +17,7 @@ void QuickSort(int a[], int l, int r) {
 	int i, j, temp;
 	temp = a[l];
 	i = l; j = r;
-	while (i<j) {           //¿É¸ÄÎªforÑ­»·
+	while (i<j) {           //ï¿½É¸ï¿½ÎªforÑ­ï¿½ï¿½
 		while (i<j&&temp<a[j])
 			j--;
 		a[i] = a[j];
@@ -27,10 +28,10 @@ void QuickSort(int a[], int l, int r) {
 	a[i] = temp;
 
 	QuickSort(a, l, i - 1);
-	QuickSort(a, i + 1, r);    //µÝ¹é
+	QuickSort(a, i + 1, r);    //ï¿½Ý¹ï¿½
 }
 
-
+#if 0
 //**************************************************
 int partition(vector<int>& nums, int left, int right) {
     int pivot = nums[left];
@@ -77,15 +78,17 @@ void Qsort(int a[], int low, int high){
     Qsort(a, low, first-1);
     Qsort(a, first+1, high);
 }
+#endif
 
-void main()
+
+int main()
 {
 	int inputNumber[] = { 2, 7, 5, 9, 1, 4, 6, 3, 8 };
 	int count = 9;
-	cout << "Ô­Ê¼Êý×é£º" << endl;
+	cout << "Ô­Ê¼ï¿½ï¿½ï¿½é£º" << endl;
 	show(inputNumber, count);
-	cout << "ÅÅÐò¹ý³Ì£º" << endl;
+	cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì£ï¿½" << endl;
 	QuickSort(inputNumber, 0, count);
-	cout << "ÅÅÐò½á¹û£º" << endl;
+	cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << endl;
 	show(inputNumber, count);
 }
