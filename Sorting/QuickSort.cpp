@@ -31,7 +31,7 @@ void QuickSort(int a[], int l, int r) {
 	QuickSort(a, i + 1, r);    //�ݹ�
 }
 
-#if 0
+#if 1
 //**************************************************
 int partition(vector<int>& nums, int left, int right) {
     int pivot = nums[left];
