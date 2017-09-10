@@ -85,8 +85,8 @@ static void __exit mycleanup_module()
 {
     if(nl_sk != NULL){
         sock_release(nl_sk->sk_socket);
-}
-printk("my netlink out!\n");
+    }
+    printk("my netlink out!\n");
 }
 
 module_init(myinit_module);

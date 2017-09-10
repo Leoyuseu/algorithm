@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
     int sock_fd=-1;
     //struct msghdr msg;
 
-    if(-1 == (sock_fd=socket(PF_NETLINK, SOCK_RAW,NETLINK_TEST))){
+    if(-1 == (sock_fd = socket(PF_NETLINK, SOCK_RAW,NETLINK_TEST))){
           perror("can't create netlink socket!");
           return 1;
     }

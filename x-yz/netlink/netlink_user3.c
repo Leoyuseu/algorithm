@@ -25,7 +25,6 @@ int main(int argc, char* argv[])
     struct msghdr msg;
     int sock_fd, retval;
 
-    // 创建Socket
     sock_fd = socket(PF_NETLINK, SOCK_RAW, NETLINK_TEST);
     if(sock_fd == -1){
         printf("error getting socket: %s", strerror(errno));
@@ -34,7 +33,7 @@ int main(int argc, char* argv[])
 
     memset(&src_addr, 0, sizeof(src_addr));
     src_addr.nl_family = PF_NETLINK;
-    src_addr.nl_pid = 0; // 表示我们要从内核接收多播消息。注意：该字段为0有双重意义，另一个意义是表示我们发送的数据的目的地址是内核。
+    src_addr.nl_pid = 0; /* 表示我们要从内核接收多播消息。注意：该字段为0有双重意义，另一个意义是表示我们发送的数据的目的地址是内核 */
     src_addr.nl_groups = netlink_group_mask(atoi(argv[1])); // 多播组的掩码，组号来自我们执行程序时输入的第一个参数
 
     // 因为我们要加入到一个多播组，所以必须调用bind()。
